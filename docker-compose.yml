@@ -1,0 +1,25 @@
+version: "3"
+services:
+  web:
+    build: .
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - "3001:3000"
+    environment:
+      - RDS_HOSTNAME=db
+      - RDS_PORT=5432
+      - RDS_DB_NAME=taskmanagement
+      - RDS_USERNAME=postgres
+      - RDS_PASSWORD=admin
+  db:
+    image: postgres:13
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=taskmanagement
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=admin
+

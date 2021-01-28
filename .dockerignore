@@ -1,0 +1,15 @@
+e2e
+dist
+test
+node_modules
+
+npm-debug.log
+
+.env
+.git
+.gitignore
+
+README.md
+
+docker-compose.yml
+docker-volumes
